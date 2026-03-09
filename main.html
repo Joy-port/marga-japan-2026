@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>日本九州・阿蘇火山 重生之旅 | MARGA</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+		rel="stylesheet">
+	<style>
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0
+		}
+
+		:root {
+			--ink: #2d1f4e;
+			--ink-light: #4a3570;
+			--gold: #b8966a;
+			--gold-light: #d4b48a;
+			--cream: #f5f0e8;
+			--warm-white: #faf7f2;
+			--text: #3a3040;
+			--text-light: #6b5c7e;
+		}
+
+		html {
+			scroll-behavior: smooth
+		}
+
+		#journey,
+		#breathwork,
+		#experience,
+		#stay,
+		#flight,
+		#pricing,
+		#register {
+			scroll-margin-top: 68px
+		}
+
+		body {
+			font-family: "Noto Serif TC", serif;
+			background: var(--warm-white);
+			color: var(--text);
+			line-height: 1.9;
+			font-weight: 300
+		}
+
+		nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 100;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 16px 48px;
+			background: rgba(250, 247, 242, .95);
+			backdrop-filter: blur(12px);
+			border-bottom: 1px solid rgba(184, 150, 106, .2)
+		}
+
+		.nav-brand {
+			font-family: "Cormorant Garamond", serif;
+			font-size: 1.15rem;
+			letter-spacing: .28em;
+			color: var(--ink)
+		}
+
+		.nav-links {
+			display: flex;
+			gap: 28px;
+			list-style: none
+		}
+
+		.nav-links a {
+			font-size: .75rem;
+			letter-spacing: .18em;
+			color: var(--text-light);
+			text-decoration: none;
+			transition: color .3s
+		}
+
+		.nav-links a:hover {
+			color: var(--ink)
+		}
+
+		.hero {
+			height: 100vh;
+			min-height: 640px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: linear-gradient(135deg, #1a0f35 0%, #2d1f4e 50%, #1a0f35 100%);
+			position: relative
+		}
+
+		.hero::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: radial-gradient(circle at 30% 40%, rgba(184, 150, 106, .14) 0%, transparent 55%), radial-gradient(circle at 70% 65%, rgba(184, 150, 106, .09) 0%, transparent 50%)
+		}
+
+		.hero-content {
+			position: relative;
+			z-index: 2;
+			text-align: center;
+			padding: 0 24px
+		}
+
+		.hero-sub {
+			font-family: "Cormorant Garamond", serif;
+			font-size: .95rem;
+			letter-spacing: .35em;
+			color: rgba(212, 180, 138, .7);
+			margin-bottom: 20px;
+			text-transform: uppercase
+		}
+
+		.hero-title {
+			font-size: clamp(2.6rem, 6vw, 5rem);
+			font-weight: 300;
+			color: #fff;
+			line-height: 1.3;
+			letter-spacing: .1em;
+			margin-bottom: 10px
+		}
+
+		.hero-dot {
+			color: var(--gold-light)
+		}
+
+		.hero-en {
+			font-family: "Cormorant Garamond", serif;
+			font-size: clamp(3rem, 8vw, 7rem);
+			font-weight: 300;
+			color: rgba(212, 180, 138, .35);
+			letter-spacing: .08em;
+			line-height: 1;
+			margin-top: 8px
+		}
+
+		.hero-meta {
+			margin-top: 36px;
+			font-size: .82rem;
+			letter-spacing: .22em;
+			color: rgba(255, 255, 255, .55)
+		}
+
+		.hero-cta {
+			display: inline-block;
+			margin-top: 40px;
+			padding: 14px 44px;
+			border: 1px solid rgba(184, 150, 106, .6);
+			color: rgba(255, 255, 255, .9);
+			text-decoration: none;
+			font-size: .82rem;
+			letter-spacing: .22em;
+			background: rgba(184, 150, 106, .1);
+			transition: all .4s
+		}
+
+		.hero-cta:hover {
+			background: rgba(184, 150, 106, .25)
+		}
+
+		.scroll-hint {
+			position: absolute;
+			bottom: 32px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 8px;
+			color: rgba(255, 255, 255, .35);
+			font-size: .68rem;
+			letter-spacing: .2em;
+			z-index: 2
+		}
+
+		.scroll-line {
+			width: 1px;
+			height: 36px;
+			background: linear-gradient(to bottom, rgba(184, 150, 106, .5), transparent);
+			animation: sp 2s ease infinite
+		}
+
+		@keyframes sp {
+
+			0%,
+			100% {
+				opacity: .4
+			}
+
+			50% {
+				opacity: 1
+			}
+		}
+
+		section {
+			padding: 96px 24px
+		}
+
+		.container {
+			max-width: 860px;
+			margin: 0 auto
+		}
+
+		.container-wide {
+			max-width: 1100px;
+			margin: 0 auto
+		}
+
+		.section-label {
+			font-family: "Cormorant Garamond", serif;
+			font-size: .78rem;
+			letter-spacing: .38em;
+			color: var(--gold);
+			text-transform: uppercase;
+			margin-bottom: 14px
+		}
+
+		.section-title {
+			font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+			font-weight: 300;
+			color: var(--ink);
+			line-height: 1.4;
+			letter-spacing: .06em;
+			margin-bottom: 32px
+		}
+
+		.divider {
+			width: 48px;
+			height: 1px;
+			background: var(--gold);
+			margin-bottom: 36px
+		}
+
+		.body-text {
+			font-size: .95rem;
+			line-height: 2;
+			color: var(--text);
+			font-weight: 300
+		}
+
+		/* INTRO */
+		.intro-banner {
+			background: var(--cream);
+			padding: 0
+		}
+
+		.intro-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			min-height: 520px
+		}
+
+		.intro-text-side {
+			padding: 80px 64px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center
+		}
+
+		.intro-color-side {
+			background: linear-gradient(160deg, #2d1f4e, #1a0f35);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 60px 48px
+		}
+
+		.intro-color-quote {
+			font-family: "Cormorant Garamond", serif;
+			font-size: clamp(1.4rem, 3vw, 2.4rem);
+			color: rgba(245, 240, 232, .5);
+			line-height: 1.7;
+			letter-spacing: .05em;
+			font-weight: 300;
+			text-align: center
+		}
+
+		.intro-color-quote em {
+			font-style: normal;
+			color: var(--gold-light)
+		}
+
+		.intro-quote {
+			font-size: clamp(1rem, 2vw, 1.4rem);
+			font-weight: 300;
+			color: var(--ink);
+			line-height: 1.85;
+			margin-bottom: 24px
+		}
+
+		.intro-quote em {
+			font-style: normal;
+			color: var(--gold)
+		}
+
+		.tagline-pair {
+			margin-top: 32px;
+			border-top: 1px solid rgba(184, 150, 106, .3);
+			padding-top: 22px
+		}
+
+		.tagline-pair p {
+			font-size: .95rem;
+			color: var(--ink-light);
+			letter-spacing: .08em;
+			line-height: 2.1
+		}
+
+		/* TIMING */
+		.timing-section {
+			background: var(--warm-white);
+			padding: 96px 24px;
+			border-top: 1px solid rgba(184, 150, 106, .15);
+			border-bottom: 1px solid rgba(184, 150, 106, .15)
+		}
+
+		.timing-content {
+			max-width: 640px;
+			margin: 0 auto;
+			text-align: center
+		}
+
+		.timing-section .section-label {
+			color: var(--gold)
+		}
+
+		.timing-section .section-title {
+			color: var(--ink);
+			text-align: center;
+			margin-bottom: 16px
+		}
+
+		.timing-section .divider {
+			background: var(--gold);
+			margin: 0 auto 40px
+		}
+
+		.timing-section .body-text {
+			color: var(--text);
+			text-align: center;
+			margin-bottom: 48px
+		}
+
+		.timing-items {
+			display: flex;
+			flex-direction: column;
+			gap: 14px;
+			text-align: left;
+			max-width: 440px;
+			margin: 0 auto
+		}
+
+		.timing-item {
+			display: flex;
+			gap: 20px;
+			align-items: flex-start;
+			padding: 18px 22px;
+			background: var(--cream);
+			border-left: 2px solid var(--gold)
+		}
+
+		.timing-label {
+			flex-shrink: 0;
+			font-family: "Cormorant Garamond", serif;
+			font-size: 1rem;
+			letter-spacing: .12em;
+			color: var(--gold);
+			font-weight: 500;
+			min-width: 44px;
+			padding-top: 2px
+		}
+
+		.timing-desc {
+			font-size: .9rem;
+			color: var(--text);
+			line-height: 1.8
+		}
+
+		/* BREATHWORK */
+		.breathwork-section {
+			background: var(--warm-white)
+		}
+
+		.breathwork-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 72px;
+			align-items: center
+		}
+
+		.bw-visual {
+			background: linear-gradient(145deg, #2d1f4e, #4a3570, #2d1f4e);
+			height: auto;
+			min-height: 500px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 88px 40px;
+			text-align: center;
+			position: relative;
+			overflow: hidden
+		}
+
+		.bw-visual::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: radial-gradient(circle at 50% 50%, rgba(184, 150, 106, .14) 0%, transparent 65%)
+		}
+
+		.bw-glyph {
+			font-family: "Cormorant Garamond", serif;
+			font-size: 6rem;
+			color: rgba(184, 150, 106, .22);
+			line-height: 1;
+			margin-bottom: 22px;
+			position: relative;
+			z-index: 1
+		}
+
+		.bw-text {
+			font-size: 1.3rem;
+			font-weight: 300;
+			color: rgba(245, 240, 232, .65);
+			letter-spacing: .12em;
+			line-height: 1.8;
+			position: relative;
+			z-index: 1
+		}
+
+		.bw-en {
+			font-family: "Cormorant Garamond", serif;
+			font-size: .8rem;
+			color: var(--gold-light);
+			letter-spacing: .3em;
+			margin-top: 18px;
+			position: relative;
+			z-index: 1
+		}
+
+		.effects-list {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			margin-top: 32px
+		}
+
+		.effect-item {
+			display: flex;
+			gap: 16px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid rgba(184, 150, 106, .18)
+		}
+
+		.effect-item:last-child {
+			border-bottom: none;
+			padding-bottom: 0
+		}
+
+		.effect-num {
+			font-family: "Cormorant Garamond", serif;
+			font-size: 1.4rem;
+			color: var(--gold);
+			line-height: 1;
+			flex-shrink: 0;
+			margin-top: 2px
+		}
+
+		.effect-body h4 {
+			font-size: .88rem;
+			font-weight: 500;
+			color: var(--ink);
+			letter-spacing: .1em;
+			margin-bottom: 5px
+		}
+
+		.effect-body p {
+			font-size: .82rem;
+			color: var(--text-light);
+			line-height: 1.85;
+			font-weight: 300
+		}
+
+		/* LOCATION */
+		.location-section {
+			background: var(--cream)
+		}
+
+		.location-intro {
+			font-size: .97rem;
+			color: var(--ink);
+			line-height: 2;
+			font-weight: 300;
+			margin-bottom: 40px
+		}
+
+		.location-badges {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			margin-bottom: 32px
+		}
+
+		.badge {
+			padding: 7px 16px;
+			border: 1px solid var(--gold);
+			font-size: .73rem;
+			letter-spacing: .14em;
+			color: var(--gold)
+		}
+
+		.loc-cards {
+			display: flex;
+			flex-direction: column;
+			gap: 3px;
+			margin-top: 32px
+		}
+
+		.loc-card {
+			padding: 28px 36px;
+			display: flex;
+			align-items: center;
+			gap: 24px;
+			position: relative;
+			overflow: hidden
+		}
+
+		.loc-card:nth-child(1) {
+			background: linear-gradient(100deg, #1a0f35 0%, #2d1f4e 60%, #3d2a5e 100%)
+		}
+
+		.loc-card:nth-child(2) {
+			background: linear-gradient(100deg, #2d1f4e 0%, #1a0f35 60%, #2d1f4e 100%)
+		}
+
+		.loc-card:nth-child(3) {
+			background: linear-gradient(100deg, #1e1336 0%, #2d1f4e 60%, #3d2a5e 100%)
+		}
+
+		.loc-card-icon {
+			font-size: 1.6rem;
+			flex-shrink: 0;
+			width: 40px;
+			text-align: center
+		}
+
+		.loc-card-title {
+			font-size: .85rem;
+			font-weight: 500;
+			color: var(--gold-light);
+			letter-spacing: .12em;
+			margin-bottom: 5px
+		}
+
+		.loc-card-desc {
+			font-size: .78rem;
+			color: rgba(245, 240, 232, .62);
+			line-height: 1.8;
+			font-weight: 300
+		}
+
+		/* EXPERIENCE */
+		.exp-section {
+			background: var(--cream);
+			padding-bottom: 0
+		}
+
+		.exp-section .section-label {
+			color: var(--gold)
+		}
+
+		.exp-section .section-title {
+			color: var(--ink)
+		}
+
+		.exp-section .divider {
+			background: var(--gold);
+			margin-bottom: 36px
+		}
+
+		.exp-grid {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			gap: 2px;
+			margin-top: 52px;
+			background: rgba(45, 31, 78, .08)
+		}
+
+		.exp-card {
+			grid-column: span 2;
+			padding: 40px 30px;
+			background: var(--warm-white);
+			border-top: 2px solid transparent;
+			transition: border-color .3s, background .3s
+		}
+
+		.exp-card:hover {
+			background: var(--cream);
+			border-color: var(--gold)
+		}
+
+		.exp-card.wide {
+			grid-column: span 6;
+			background: var(--cream);
+			border-top: 1px solid rgba(184, 150, 106, .25);
+			padding: 48px 44px
+		}
+
+		.exp-card-04 {
+			grid-column: span 3
+		}
+
+		.exp-card-05 {
+			grid-column: span 3;
+			background: var(--warm-white);
+			border-top: 2px solid transparent;
+			padding: 40px 30px
+		}
+
+		.exp-num {
+			font-family: "Cormorant Garamond", serif;
+			font-size: 2rem;
+			color: rgba(184, 150, 106, .55);
+			line-height: 1;
+			margin-bottom: 13px
+		}
+
+		.exp-card-title {
+			font-size: .97rem;
+			font-weight: 400;
+			color: var(--ink);
+			letter-spacing: .1em;
+			margin-bottom: 10px
+		}
+
+		.exp-card-desc {
+			font-size: .8rem;
+			color: var(--text-light);
+			line-height: 1.88;
+			font-weight: 300
+		}
+
+		/* ACCOMMODATION */
+		.accom-section {
+			background: var(--warm-white)
+		}
+
+		.accom-desc-block {
+			margin-top: 48px;
+			padding: 48px 56px;
+			background: var(--cream);
+			border: 1px solid rgba(184, 150, 106, .2)
+		}
+
+		.accom-stat {
+			text-align: center
+		}
+
+		.accom-stat-num {
+			font-family: "Cormorant Garamond", serif;
+			font-size: 4rem;
+			color: rgba(184, 150, 106, .5);
+			line-height: 1
+		}
+
+		.accom-stat-label {
+			font-size: .78rem;
+			letter-spacing: .18em;
+			color: var(--gold-light);
+			margin-top: 6px
+		}
+
+		.accom-stat-sub {
+			font-size: .72rem;
+			color: var(--text-light);
+			letter-spacing: .1em;
+			margin-top: 4px
+		}
+
+		.accom-text {
+			font-size: .92rem;
+			line-height: 2;
+			color: var(--text);
+			font-weight: 300
+		}
+
+		.accom-features {
+			margin-top: 32px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 12px
+		}
+
+		.accom-feature {
+			padding: 16px 20px;
+			background: var(--warm-white);
+			border-left: 2px solid var(--gold)
+		}
+
+		.accom-feature-title {
+			font-size: .8rem;
+			color: var(--gold);
+			letter-spacing: .1em;
+			margin-bottom: 4px
+		}
+
+		.accom-feature-desc {
+			font-size: .75rem;
+			color: var(--text-light);
+			line-height: 1.7
+		}
+
+		/* FLIGHT */
+		.flight-section {
+			background: var(--cream)
+		}
+
+		.flight-options {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 24px;
+			margin-top: 44px
+		}
+
+		.flight-card {
+			padding: 34px 30px;
+			border: 1px solid rgba(184, 150, 106, .3);
+			background: var(--warm-white);
+			position: relative
+		}
+
+		.flight-card.recommended::before {
+			content: "建議方案";
+			position: absolute;
+			top: -1px;
+			right: 22px;
+			background: var(--ink);
+			color: var(--cream);
+			font-size: .67rem;
+			letter-spacing: .18em;
+			padding: 5px 13px
+		}
+
+		.flight-airline {
+			font-family: "Cormorant Garamond", serif;
+			font-size: 1.25rem;
+			color: var(--gold);
+			letter-spacing: .1em;
+			margin-bottom: 22px
+		}
+
+		.flight-row {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			margin-bottom: 22px
+		}
+
+		.flight-leg {
+			display: flex;
+			gap: 14px;
+			align-items: flex-start
+		}
+
+		.flight-dir {
+			font-size: .68rem;
+			letter-spacing: .18em;
+			color: var(--gold);
+			min-width: 34px;
+			padding-top: 2px
+		}
+
+		.flight-info {
+			font-size: .86rem;
+			color: var(--text);
+			line-height: 1.7
+		}
+
+		.flight-time {
+			font-weight: 500;
+			color: var(--ink)
+		}
+
+		.flight-price {
+			border-top: 1px solid rgba(184, 150, 106, .25);
+			padding-top: 16px;
+			font-size: .8rem;
+			color: var(--text-light);
+			line-height: 1.8
+		}
+
+		.flight-price strong {
+			font-size: 1rem;
+			color: var(--ink);
+			display: block;
+			margin-top: 4px
+		}
+
+		.flight-notes {
+			margin-top: 36px;
+			padding: 26px 30px;
+			background: var(--warm-white);
+			border-left: 3px solid var(--gold)
+		}
+
+		.flight-notes p {
+			font-size: .83rem;
+			color: var(--text);
+			line-height: 2.1;
+			font-weight: 300
+		}
+
+		/* PRICING */
+		.pricing-section {
+			background: linear-gradient(180deg, #1a0f35, #2d1f4e 50%, #1a0f35);
+			padding: 96px 24px
+		}
+
+		.pricing-content {
+			max-width: 760px;
+			margin: 0 auto
+		}
+
+		.pricing-section .section-label {
+			text-align: center;
+			color: var(--gold-light)
+		}
+
+		.pricing-section .section-title {
+			text-align: center;
+			color: rgba(245, 240, 232, .9);
+			margin-bottom: 8px
+		}
+
+		.pricing-section .divider {
+			background: var(--gold);
+			margin: 0 auto 48px
+		}
+
+		.price-main {
+			text-align: center;
+			margin-bottom: 56px
+		}
+
+		.price-number {
+			font-family: "Cormorant Garamond", serif;
+			font-size: clamp(3rem, 7vw, 5.5rem);
+			color: rgba(245, 240, 232, .9);
+			font-weight: 300;
+			line-height: 1
+		}
+
+		.price-currency {
+			font-size: clamp(.88rem, 2vw, 1.1rem);
+			color: rgba(184, 150, 106, .75);
+			letter-spacing: .08em;
+			margin-bottom: 8px;
+			display: block
+		}
+
+		.price-note {
+			font-size: .8rem;
+			color: rgba(245, 240, 232, .36);
+			letter-spacing: .1em;
+			margin-top: 10px
+		}
+
+		.price-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 18px;
+			margin-bottom: 32px
+		}
+
+		.price-box {
+			padding: 26px 22px;
+			background: rgba(255, 255, 255, .06);
+			border: 1px solid rgba(184, 150, 106, .2)
+		}
+
+		.price-box-label {
+			font-size: .73rem;
+			letter-spacing: .22em;
+			color: var(--gold);
+			margin-bottom: 10px
+		}
+
+		.price-box-value {
+			font-family: "Cormorant Garamond", serif;
+			font-size: 1.5rem;
+			color: rgba(245, 240, 232, .88)
+		}
+
+		.price-box-desc {
+			font-size: .76rem;
+			color: rgba(245, 240, 232, .42);
+			margin-top: 8px;
+			line-height: 1.7
+		}
+
+		.price-includes {
+			padding: 26px;
+			background: rgba(255, 255, 255, .05);
+			border: 1px solid rgba(184, 150, 106, .18);
+			margin-bottom: 22px
+		}
+
+		.price-includes h4 {
+			font-size: .73rem;
+			letter-spacing: .22em;
+			color: var(--gold);
+			margin-bottom: 14px
+		}
+
+		.price-includes ul {
+			list-style: none;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 7px 22px
+		}
+
+		.price-includes li {
+			font-size: .8rem;
+			color: rgba(245, 240, 232, .62);
+			padding-left: 15px;
+			position: relative
+		}
+
+		.price-includes li::before {
+			content: "✦";
+			position: absolute;
+			left: 0;
+			color: var(--gold);
+			font-size: .58rem;
+			top: 4px
+		}
+
+		.bonus-box {
+			padding: 26px 30px;
+			background: rgba(184, 150, 106, .1);
+			border: 1px solid rgba(184, 150, 106, .28);
+			text-align: center
+		}
+
+		.bonus-box p {
+			font-size: .86rem;
+			line-height: 2;
+			font-weight: 300;
+			color: rgba(245, 240, 232, .7)
+		}
+
+		.bonus-box strong {
+			color: var(--gold-light)
+		}
+
+		/* FACILITATOR */
+		.facilitator-section {
+			background: var(--warm-white)
+		}
+
+		.facilitator-grid {
+			display: grid;
+			grid-template-columns: 1fr 1.4fr;
+			gap: 64px;
+			align-items: start
+		}
+
+		.facilitator-visual {
+			background: linear-gradient(170deg, #2d1f4e, #4a3570, #1a0f35);
+			min-height: 460px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-end;
+			padding: 44px 34px;
+			text-align: center;
+			position: sticky;
+			top: 90px
+		}
+
+		.facilitator-initial {
+			font-family: "Cormorant Garamond", serif;
+			font-size: 7rem;
+			color: rgba(184, 150, 106, .18);
+			line-height: 1;
+			margin-bottom: auto;
+			margin-top: auto
+		}
+
+		.facilitator-name-block {
+			border-top: 1px solid rgba(184, 150, 106, .25);
+			padding-top: 26px;
+			width: 100%
+		}
+
+		.facilitator-name {
+			font-size: 1.35rem;
+			font-weight: 300;
+			color: rgba(245, 240, 232, .88);
+			letter-spacing: .1em;
+			margin-bottom: 4px
+		}
+
+		.facilitator-name-en {
+			font-family: "Cormorant Garamond", serif;
+			font-size: .97rem;
+			color: var(--gold);
+			letter-spacing: .25em;
+			display: block;
+			margin-top: 4px
+		}
+
+		/* CTA */
+		.cta-section {
+			background: var(--ink);
+			padding: 96px 24px;
+			text-align: center
+		}
+
+		.cta-section .section-label {
+			color: var(--gold-light)
+		}
+
+		.cta-section .section-title {
+			color: rgba(245, 240, 232, .92)
+		}
+
+		.cta-section .divider {
+			background: var(--gold);
+			margin: 0 auto 34px
+		}
+
+		.cta-section .body-text {
+			color: rgba(245, 240, 232, .65);
+			max-width: 500px;
+			margin: 0 auto 40px
+		}
+
+		.cta-btn {
+			display: inline-block;
+			padding: 17px 54px;
+			background: var(--gold);
+			color: var(--ink);
+			text-decoration: none;
+			font-size: .88rem;
+			letter-spacing: .2em;
+			transition: all .3s;
+			font-weight: 400
+		}
+
+		.cta-btn:hover {
+			background: var(--gold-light);
+			transform: translateY(-2px)
+		}
+
+		.cta-links {
+			margin-top: 26px;
+			display: flex;
+			gap: 28px;
+			justify-content: center;
+			flex-wrap: wrap
+		}
+
+		.cta-link {
+			font-size: .76rem;
+			letter-spacing: .2em;
+			color: rgba(245, 240, 232, .36);
+			text-decoration: none;
+			border-bottom: 1px solid transparent;
+			transition: all .3s
+		}
+
+		.cta-link:hover {
+			color: var(--gold-light);
+			border-bottom-color: var(--gold-light)
+		}
+
+		footer {
+			background: #110d1e;
+			padding: 34px 48px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between
+		}
+
+		.footer-brand {
+			font-family: "Cormorant Garamond", serif;
+			font-size: .97rem;
+			letter-spacing: .3em;
+			color: rgba(255, 255, 255, .2)
+		}
+
+		.footer-copy {
+			font-size: .7rem;
+			letter-spacing: .15em;
+			color: rgba(255, 255, 255, .13)
+		}
+
+		@media(max-width:768px) {
+			nav {
+				padding: 14px 20px
+			}
+
+			.nav-links {
+				display: none
+			}
+
+			.intro-grid,
+			.breathwork-grid,
+			.facilitator-grid {
+				grid-template-columns: 1fr
+			}
+
+			.intro-color-side {
+				min-height: 220px
+			}
+
+			.intro-text-side {
+				padding: 48px 28px
+			}
+
+			.bw-visual {
+				height: 240px
+			}
+
+			.exp-grid {
+				grid-template-columns: 1fr 1fr
+			}
+
+			.exp-card {
+				grid-column: span 1
+			}
+
+			.exp-card.wide {
+				grid-column: span 2
+			}
+
+			.exp-card-04 {
+				grid-column: span 1
+			}
+
+			.exp-card-05 {
+				grid-column: span 2
+			}
+
+			.accom-desc-block,
+			.accom-features {
+				grid-template-columns: 1fr
+			}
+
+			.flight-options,
+			.price-grid {
+				grid-template-columns: 1fr
+			}
+
+			.facilitator-visual {
+				position: static;
+				min-height: 200px
+			}
+
+			footer {
+				flex-direction: column;
+				gap: 10px;
+				text-align: center
+			}
+		}
+
+		/* ── Scroll animations ── */
+
+		.fade-left {
+			opacity: 0;
+			transform: translateX(-32px);
+			transition: opacity .75s ease-out, transform .75s ease-out
+		}
+
+		.fade-right {
+			opacity: 0;
+			transform: translateX(32px);
+			transition: opacity .75s ease-out, transform .75s ease-out
+		}
+
+		.fade-left.visible,
+		.fade-right.visible {
+			opacity: 1;
+			transform: translateX(0)
+		}
+
+		.fade-up {
+			opacity: 0;
+			transform: translateY(24px);
+			transition: opacity .7s ease-out, transform .7s ease-out
+		}
+
+		.fade-in {
+			opacity: 0;
+			transition: opacity .7s ease-out
+		}
+
+		.fade-up.visible,
+		.fade-in.visible {
+			opacity: 1;
+			transform: translateY(0)
+		}
+
+		.stagger-1 {
+			transition-delay: .08s
+		}
+
+		.stagger-2 {
+			transition-delay: .16s
+		}
+
+		.stagger-3 {
+			transition-delay: .24s
+		}
+
+		.stagger-4 {
+			transition-delay: .32s
+		}
+
+		.stagger-5 {
+			transition-delay: .40s
+		}
+
+		/* Hero entrance */
+		.hero-sub {
+			opacity: 0;
+			transform: translateY(12px);
+			animation: hero-in .8s ease-out .2s forwards
+		}
+
+		.hero-title {
+			opacity: 0;
+			transform: translateY(16px);
+			animation: hero-in .9s ease-out .45s forwards
+		}
+
+		.hero-en {
+			opacity: 0;
+			animation: hero-in .9s ease-out .65s forwards
+		}
+
+		.hero-meta {
+			opacity: 0;
+			animation: hero-in .7s ease-out .85s forwards
+		}
+
+		.hero-cta {
+			opacity: 0;
+			animation: hero-in .7s ease-out 1.05s forwards
+		}
+
+		.scroll-hint {
+			opacity: 0;
+			animation: hero-in .7s ease-out 1.4s forwards
+		}
+
+		@keyframes hero-in {
+			to {
+				opacity: 1;
+				transform: translateY(0)
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav>
+		<div class="nav-brand">M&#256;RGA</div>
+		<ul class="nav-links">
+			<li><a href="#breathwork">重生呼吸</a></li>
+			<li><a href="#journey">旅程設計</a></li>
+			<li><a href="#experience">場域體驗</a></li>
+			<li><a href="#stay">住宿</a></li>
+			<li><a href="#flight">航班資訊</a></li>
+			<li><a href="#pricing">費用說明</a></li>
+			<li><a href="#register">立即報名</a></li>
+		</ul>
+	</nav>
+
+	<!-- HERO -->
+	<div class="hero">
+		<div class="hero-content">
+			<p class="hero-sub">Kyushu, Japan &nbsp;·&nbsp; Spring Equinox 2026</p>
+			<h1 class="hero-title">日本九州<span class="hero-dot">。</span>阿蘇火山<br>重 生 之 旅</h1>
+			<div class="hero-en">MT. ASO</div>
+			<p class="hero-meta">2026.03.18 — 03.22 &nbsp;·&nbsp; 五天四夜 &nbsp;·&nbsp; 精緻小班</p>
+			<a href="#register" class="hero-cta">立即報名</a>
+		</div>
+		<div class="scroll-hint">
+			<div class="scroll-line"></div><span>SCROLL</span>
+		</div>
+	</div>
+
+	<!-- INTRO -->
+	<div class="intro-banner">
+		<div class="intro-grid">
+			<div class="intro-text-side">
+				<p class="section-label">About This Journey</p>
+				<div class="intro-quote">一趟為<em>「真正的轉換期」</em>所設計的內在旅程，<br>這不是觀光行程，也不是密集療癒營。</div>
+				<p class="body-text">而是一趟以<strong>重生呼吸</strong>為核心，結合自然節律、身體感知、團體支持的深度整合之旅。<br><br>我們刻意放慢節奏，讓轉化自然發生。</p>
+				<div class="tagline-pair">
+					<p>春分調衡。萬物甦醒</p>
+					<p>新月祈願。種下新生種子</p>
+				</div>
+			</div>
+			<div class="intro-color-side">
+				<div class="intro-color-quote">在呼與吸之間，<br>找回生命<em>原有的</em><br>完整與流動。</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- TIMING -->
+	<div class="timing-section" id="journey">
+		<div class="timing-content">
+			<p class="section-label">Celestial Alignment</p>
+			<h2 class="section-title">對齊「天時」的轉化節點</h2>
+			<div class="divider"></div>
+			<p class="body-text">本次旅程特別選在<strong style="color:var(--ink)">新月 ×
+					春分</strong>展開——象徵新的開始、平衡與方向轉換，是非常適合「人生階段轉向」的時間點。</p>
+			<div class="timing-items">
+				<div class="timing-item"><span class="timing-label">新月</span><span class="timing-desc">設定內在意圖，讓真正的渴望浮現</span>
+				</div>
+				<div class="timing-item"><span class="timing-label">春分</span><span class="timing-desc">在陰陽平衡中，重新校準自己的人生方向</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- BREATHWORK -->
+	<section class="breathwork-section" id="breathwork">
+		<div class="container-wide">
+			<div class="breathwork-grid">
+				<div class="bw-visual">
+					<div class="bw-glyph">息</div>
+					<div class="bw-text">連續呼吸<br>深層療癒</div>
+					<div class="bw-en">REBIRTHING BREATHWORK</div>
+				</div>
+				<div>
+					<p class="section-label">Rebirthing Breathwork</p>
+					<h2 class="section-title">什麼是<br>重生呼吸？</h2>
+					<div class="divider"></div>
+					<p class="body-text">
+						重生呼吸法是一種以<strong>意識呼吸</strong>為核心的深層療癒工具。透過連續、循環的呼吸節奏，引導身體進入深層的放鬆與開放狀態，讓長期壓抑在潛意識中的情緒記憶、創傷模式與限制性信念，得以在安全的容器中自然浮現、流動並釋放。
+					</p>
+					<p class="body-text" style="margin-top:16px">它會深入潛意識層面，在過程中重塑神經系統的迴路。每一次呼吸都是一次與自己的深層對話——在呼與吸之間，找回生命原有的完整與流動。
+					</p>
+					<ul class="effects-list">
+						<li class="effect-item"><span class="effect-num">01</span>
+							<div class="effect-body">
+								<h4>深層情緒釋放</h4>
+								<p>呼吸打開身體的能量通道，讓長期積壓的悲傷、恐懼、憤怒或麻木，以安全的方式流動與排解。</p>
+							</div>
+						</li>
+						<li class="effect-item"><span class="effect-num">02</span>
+							<div class="effect-body">
+								<h4>重塑神經系統</h4>
+								<p>透過有意識的呼吸節奏，調節自律神經系統，從慢性的壓力反應模式，轉向更穩定、安全的內在狀態。</p>
+							</div>
+						</li>
+						<li class="effect-item"><span class="effect-num">03</span>
+							<div class="effect-body">
+								<h4>連結身體智慧</h4>
+								<p>重新學會聆聽身體的訊號，而非只透過頭腦思考做決定。</p>
+							</div>
+						</li>
+						<li class="effect-item"><span class="effect-num">04</span>
+							<div class="effect-body">
+								<h4>整合生命經驗</h4>
+								<p>無論是童年記憶、人際創傷、生命轉折，呼吸都能協助我們以更寬廣的視角重新理解並整合這些經驗。</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- LOCATION -->
+	<section class="location-section">
+		<div class="container">
+			<p class="section-label">The Destination</p>
+			<h2 class="section-title">阿蘇火山</h2>
+			<div class="divider"></div>
+			<p class="location-intro">此次活動場域選在阿蘇火山附近的園區——<strong>大自然阿蘇健康森林</strong>（Wellness Resort ASO KENKO NO
+				MORI）。整座園區以身心健康為主題，由百位醫師共同策劃打造，並且擁有日本最大規模的健康溫浴療養設施。<br><br>火山象徵醞釀、爆發與重生；重生呼吸則讓壓抑的能量安全流動。當呼吸與火山場域共振，內在情緒得以釋放，生命力重新點燃。
+			</p>
+			<div class="location-badges">
+				<span class="badge">日本厚生勞動大臣認證</span>
+				<span class="badge">百位醫師共同策劃打造</span>
+				<span class="badge">日本最大規模健康溫浴設施</span>
+				<span class="badge">阿蘇國立公園內</span>
+			</div>
+			<div class="loc-cards">
+				<div class="loc-card" data-icon="🌋"><span class="loc-card-icon">🌋</span>
+					<div>
+						<div class="loc-card-title">阿蘇火山場域</div>
+						<div class="loc-card-desc">世界級破火山口，原始生命力場域，呼吸與大地共振</div>
+					</div>
+				</div>
+				<div class="loc-card" data-icon="♨"><span class="loc-card-icon">♨</span>
+					<div>
+						<div class="loc-card-title">健康火山溫泉</div>
+						<div class="loc-card-desc">男女各1000坪廣闊庭園露天溫泉，硫酸鹽泉質，仰望外輪山</div>
+					</div>
+				</div>
+				<div class="loc-card" data-icon="🍃"><span class="loc-card-icon">🍃</span>
+					<div>
+						<div class="loc-card-title">農園餐廳 BIG FARM</div>
+						<div class="loc-card-desc">每日現採無農藥蔬菜，管理營養師設計菜單，食的健康</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- EXPERIENCE -->
+	<section class="exp-section" id="experience">
+		<div class="container">
+			<p class="section-label">What Awaits You</p>
+			<h2 class="section-title">場域體驗亮點</h2>
+			<div class="divider"></div>
+		</div>
+		<div class="container-wide">
+			<div class="exp-grid">
+				<div class="exp-card">
+					<div class="exp-num">01</div>
+					<p class="exp-card-title">重生呼吸深層療癒</p>
+					<p class="exp-card-desc">以火山場域的原始生命力為共振背景，讓呼吸與大地共鳴，壓抑的能量安全流動，生命力重新點燃。</p>
+				</div>
+				<div class="exp-card">
+					<div class="exp-num">02</div>
+					<p class="exp-card-title">水晶洞冥想</p>
+					<p class="exp-card-desc">在整座水晶打造的水晶洞內冥想，感受寶石的能量與身體的共振，讓思緒清明、心靈沉澱。</p>
+				</div>
+				<div class="exp-card">
+					<div class="exp-num">03</div>
+					<p class="exp-card-title">阿蘇健康火山溫泉</p>
+					<p class="exp-card-desc">男女各1000坪廣闊大庭園露天溫泉，硫酸鹽泉質，仰望阿蘇外輪山，在星空下療癒身心。</p>
+				</div>
+				<div class="exp-card exp-card-04">
+					<div class="exp-num">04</div>
+					<p class="exp-card-title">圓頂還原浴・十三窯</p>
+					<p class="exp-card-desc">日本最大規模。13座圓頂窯，藥草窯、寶石窯、冰溫窯等，宛如母親子宮般的空間，讓身體從體內進行重設。</p>
+				</div>
+				<div class="exp-card exp-card-05">
+					<div class="exp-num">05</div>
+					<p class="exp-card-title">蔬食淨化</p>
+					<p class="exp-card-desc">整趟旅程以更加輕盈的方式生活。園區內每日現採的無毒蔬菜，豐富多元的餐點，滋養每個人的身心。</p>
+				</div>
+				<div class="exp-card wide">
+					<div class="exp-num">✦</div>
+					<p class="exp-card-title">完整的五天四夜整合之旅</p>
+					<p class="exp-card-desc">
+						整個行程設計是一個完整的閉環：前期卸下防備、中期深層釋放、後期收斂與整合。每一天的節奏都經過精心設計，讓您帶著清晰的力量回到日常。參與者需全程參與，以確保完整的整合與心理安全。</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ACCOMMODATION -->
+	<section class="accom-section" id="stay">
+		<div class="container">
+			<p class="section-label">Where You Stay</p>
+			<h2 class="section-title">圓頂型客房<br>阿蘇農莊 ASO Farm Village</h2>
+			<div class="divider"></div>
+		</div>
+		<div class="container-wide">
+			<div class="accom-desc-block">
+				<div>
+					<p class="accom-text">
+						座落於阿蘇國立公園內的412棟圓頂客房，皆為獨棟的寬敞空間。一打開房門，便置身於國立公園的大自然中，感受自然的風、空氣與芬芳。<br><br>圓頂造型的室內空間，讓人感受到如母體般的安詳——在森林的靜謐中忘卻日常喧囂，用全身深呼吸，安然入睡。
+					</p>
+					<div class="accom-features">
+						<div class="accom-feature">
+							<div class="accom-feature-title">村區客房</div>
+							<div class="accom-feature-desc">雙人房（1–2人）單人床×2，整體衛浴</div>
+						</div>
+						<div class="accom-feature">
+							<div class="accom-feature-title">皇家區客房</div>
+							<div class="accom-feature-desc">附庭園、圍牆、大門，共74間</div>
+						</div>
+						<div class="accom-feature">
+							<div class="accom-feature-title">入住 / 退房</div>
+							<div class="accom-feature-desc">Check-in 16:00 · Check-out 10:00</div>
+						</div>
+						<div class="accom-feature">
+							<div class="accom-feature-title">阿蘇國立公園內</div>
+							<div class="accom-feature-desc">仰望外輪山，滿天星斗</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FLIGHT -->
+	<section class="flight-section" id="flight">
+		<div class="container">
+			<p class="section-label">Getting There</p>
+			<h2 class="section-title">航班資訊</h2>
+			<div class="divider"></div>
+			<p class="body-text">參加者需自行搭機前往熊本機場，報名後將安排專車接駁至活動場地。</p>
+			<div class="flight-options">
+				<div class="flight-card recommended">
+					<p class="flight-airline">星宇航空 STARLUX</p>
+					<div class="flight-row">
+						<div class="flight-leg"><span class="flight-dir">去程</span>
+							<div class="flight-info"><span class="flight-time">3/18（三）07:30 → 10:35</span><br>台北 → 熊本</div>
+						</div>
+						<div class="flight-leg"><span class="flight-dir">回程</span>
+							<div class="flight-info"><span class="flight-time">3/23（一）11:45 → 13:25</span><br>熊本 → 台北</div>
+						</div>
+					</div>
+					<div class="flight-price">來回經濟艙估算<strong>約 NT$ 16,000</strong>活動結束後多留一晚，從容返台</div>
+				</div>
+				<div class="flight-card">
+					<p class="flight-airline">中華航空 CI</p>
+					<div class="flight-row">
+						<div class="flight-leg"><span class="flight-dir">去程</span>
+							<div class="flight-info"><span class="flight-time">3/17（二）14:30 → 17:30</span><br>台北 → 熊本（提早一天抵達）</div>
+						</div>
+						<div class="flight-leg"><span class="flight-dir">回程</span>
+							<div class="flight-info"><span class="flight-time">3/22（六）18:30 → 20:05</span><br>熊本 → 台北（活動當天返台）</div>
+						</div>
+					</div>
+					<div class="flight-price">來回估算（視訂票時間）<strong>約 NT$ 25,000–40,000</strong>建議抓 3/17–3/23 最充裕</div>
+				</div>
+			</div>
+			<div class="flight-notes">
+				<p>・活動位在九州熊本縣，參加者需自行搭機前往熊本機場<br>・活動當天一早安排專車，機場 → 活動場地<br>・3/22 活動上午結束，場地至熊本機場約需 1
+					小時<br>・歡迎多住宿一兩天沈澱，或至周邊觀光再返台<br>・報名成功後將加入 LINE 群，可與其他參與者一起討論購票事宜</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- PRICING -->
+	<div class="pricing-section" id="pricing">
+		<div class="pricing-content">
+			<p class="section-label">Investment</p>
+			<h2 class="section-title">費用說明</h2>
+			<div class="divider"></div>
+			<div class="price-main">
+				<span class="price-currency">TWD 單人費用</span>
+				<div class="price-number">88,800</div>
+				<p class="price-note">不含機票 &nbsp;·&nbsp; 含五天四夜食宿與全程活動</p>
+			</div>
+			<div class="price-grid">
+				<div class="price-box">
+					<p class="price-box-label">付款方式</p>
+					<div class="price-box-value">訂金 NT$38,800</div>
+					<p class="price-box-desc">訂位確認即支付<br>尾款 NT$50,000（2026/2/28 前）</p>
+				</div>
+				<div class="price-box">
+					<p class="price-box-label">雙人優惠</p>
+					<div class="price-box-value">NT$168,000</div>
+					<p class="price-box-desc">兩人同行，節省 NT$9,600<br>帶上生命中重要的那個人</p>
+				</div>
+			</div>
+			<div class="price-includes">
+				<h4>費用含括</h4>
+				<ul>
+					<li>全程活動內容</li>
+					<li>重生呼吸課程</li>
+					<li>水晶洞冥想</li>
+					<li>溫泉體驗</li>
+					<li>五天四夜住宿</li>
+					<li>全程餐食</li>
+					<li>機場接駁</li>
+					<li>當地交通</li>
+				</ul>
+			</div>
+			<div class="bonus-box">
+				<p>🌵 <strong>加碼優惠</strong><br>完成重生之旅【全額】付款後，本人即享免費參加常態課<strong>「重生呼吸 團體班」</strong><br>有效期至 2026 年 6 月 30
+					日，支持您持續地練習。</p>
+			</div>
+			<p class="body-text" style="margin-top:22px;font-size:.78rem;color:rgba(245,240,232,.3);text-align:center">
+				活動需多方協調，匯款後恕無法退費。若不克參加，可轉讓給您的朋友。</p>
+		</div>
+	</div>
+
+	<!-- FACILITATOR -->
+	<section class="facilitator-section">
+		<div class="container-wide">
+			<div class="facilitator-grid">
+				<div class="facilitator-visual">
+					<div class="facilitator-initial">雅</div>
+					<div class="facilitator-name-block">
+						<div class="facilitator-name">引導師｜雅妃</div>
+						<span class="facilitator-name-en">Feilla</span>
+					</div>
+				</div>
+				<div>
+					<p class="section-label">Your Guide</p>
+					<h2 class="section-title">雅妃（Feilla）</h2>
+					<div class="divider"></div>
+					<p class="body-text">
+						雅妃（Feilla）是一位重生呼吸法引導師，長期深耕身心靈整合領域。以溫柔而紮實的引導方式，陪伴學員在呼吸中穿越恐懼、鬆開防備，在安全的容器中完成屬於自己的深層轉化。<br><br>MARGA
+						的僻靜之旅並非一般的觀光放鬆行程。重生呼吸法會深入潛意識，並在過程中重塑神經系統的迴路。整個行程的設計是一個完整的閉環，任何細節都是整體轉化過程的一部分。<br><br>這是一段很難得的機會，在這春分開端，能有一段完整的重生與整合，是非常重要的能量錨定。
+					</p>
+					<ul class="effects-list" style="margin-top:32px">
+						<li class="effect-item"><span class="effect-num">①</span>
+							<div class="effect-body">
+								<h4>前期｜卸下防備</h4>
+								<p>讓身體安全著陸，建立信任與團體容器</p>
+							</div>
+						</li>
+						<li class="effect-item"><span class="effect-num">②</span>
+							<div class="effect-body">
+								<h4>中期｜深層釋放</h4>
+								<p>與情緒和創傷相遇，讓壓抑的能量安全流動</p>
+							</div>
+						</li>
+						<li class="effect-item"><span class="effect-num">③</span>
+							<div class="effect-body">
+								<h4>後期｜收斂與整合</h4>
+								<p>帶著清晰的力量回到日常，這是最重要的一段旅程，不可缺席</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section class="cta-section" id="register">
+		<div class="container">
+			<p class="section-label">Join Us</p>
+			<h2 class="section-title">精緻小班 &nbsp;·&nbsp; 名額有限</h2>
+			<div class="divider"></div>
+			<p class="body-text">滿滿亮點的五天四夜，<br>將會是你此生難忘的回憶。<br>2026.03.18 — 03.22</p>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLSfuDmHM-g2grO0ViaB1P61LGp34MH2A8t1XHSkpN67OdtNVhw/viewform"
+				target="_blank" class="cta-btn">立即報名</a>
+			<div class="cta-links">
+				<a href="https://linktr.ee/feifeioverthemoon" target="_blank" class="cta-link">引導師連結頁</a>
+				<a href="https://www.facebook.com/feillarebirthingbreathwork/" target="_blank" class="cta-link">Facebook</a>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<span class="footer-brand">M&#256;RGA</span>
+		<span class="footer-copy">© 2026 MARGA × Feilla Rebirthing Breathwork</span>
+	</footer>
+
+	<script>
+		(function () {
+			var io = new IntersectionObserver(function (entries) {
+				entries.forEach(function (e) {
+					if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target) }
+				})
+			}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+			function watch(el) { if (el) io.observe(el) }
+
+			// ── Fade-up: text blocks (add class then observe) ──
+			var fadeUpSels = [
+				'.section-label', '.section-title', '.divider',
+				'.location-intro', '.intro-quote', '.tagline-pair',
+				'.timing-items', '.location-badges',
+				'.flight-notes', '.price-main', '.price-includes', '.bonus-box',
+				'.accom-text', '.accom-features',
+				'.bw-glyph', '.bw-text', '.bw-en',
+				'.facilitator-name-block'
+			];
+			fadeUpSels.forEach(function (sel) {
+				document.querySelectorAll(sel).forEach(function (el) {
+					el.classList.add('fade-up'); watch(el);
+				});
+			});
+
+			// ── Stagger cards ──
+			document.querySelectorAll('.loc-card').forEach(function (el, i) {
+				el.classList.add('fade-up', 'stagger-' + (i + 1)); watch(el);
+			});
+			document.querySelectorAll('.exp-card,.exp-card-05').forEach(function (el, i) {
+				el.classList.add('fade-up', 'stagger-' + Math.min(i + 1, 5)); watch(el);
+			});
+			document.querySelectorAll('.effect-item').forEach(function (el, i) {
+				el.classList.add('fade-up', 'stagger-' + Math.min(i + 1, 5)); watch(el);
+			});
+			document.querySelectorAll('.price-box').forEach(function (el, i) {
+				el.classList.add('fade-up', 'stagger-' + (i + 1)); watch(el);
+			});
+			document.querySelectorAll('.accom-feature').forEach(function (el, i) {
+				el.classList.add('fade-up', 'stagger-' + Math.min(i + 1, 4)); watch(el);
+			});
+			document.querySelectorAll('.flight-card').forEach(function (el, i) {
+				el.classList.add('fade-up', 'stagger-' + (i + 1)); watch(el);
+			});
+
+			// ── Left / right for split sections ──
+			var introText = document.querySelector('.intro-text-side');
+			var introColor = document.querySelector('.intro-color-side');
+			if (introText) { introText.classList.add('fade-left'); watch(introText) }
+			if (introColor) { introColor.classList.add('fade-right'); watch(introColor) }
+
+			var bwVisual = document.querySelector('.bw-visual');
+			var bwText = document.querySelector('.breathwork-grid > div:last-child');
+			if (bwVisual) { bwVisual.classList.add('fade-left'); watch(bwVisual) }
+			if (bwText) { bwText.classList.add('fade-right'); watch(bwText) }
+
+			var facVisual = document.querySelector('.facilitator-visual');
+			var facText = document.querySelector('.facilitator-grid > div:last-child');
+			if (facVisual) { facVisual.classList.add('fade-left'); watch(facVisual) }
+			if (facText) { facText.classList.add('fade-right'); watch(facText) }
+
+		})();
+	</script>
+</body>
+
+</html>
